@@ -12,9 +12,11 @@ class Settings(BaseSettings):
         extra="ignore"
     )
 
+    database_url: str
+
 # Create a Settings instance so Settings() is constructed once per process
 @lru_cache
 def get_settings() -> Settings:
-    return Settings()
+    return Settings() # type: ignore
 
 settings = get_settings()

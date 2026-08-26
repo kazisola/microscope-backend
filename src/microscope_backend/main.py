@@ -6,10 +6,12 @@ from starlette.exceptions import HTTPException as StarletteHTTPException
 from fastapi.exceptions import RequestValidationError
 from fastapi.exception_handlers import http_exception_handler, request_validation_exception_handler
 from microscope_backend.routers import user
+from microscope_backend.database import engine
 
 @asynccontextmanager
 async def lifespan(_app: FastAPI):
     yield
+    await engine.dispose()
 
 app = FastAPI(
     title=settings.app_name,

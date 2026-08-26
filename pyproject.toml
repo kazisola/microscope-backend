@@ -1,7 +1,7 @@
 [project]
 name = "microscope-backend"
 version = "0.1.0"
-description = "Add your description here"
+description = "A search engine for the microscopic world | search everyday objects and see what they really look like under a microscope"
 readme = "README.md"
 authors = [
     { name = "Kazi Solayman", email = "kazisolayman123@gmail.com" }
@@ -9,6 +9,8 @@ authors = [
 requires-python = ">=3.13"
 dependencies = [
     "fastapi[standard]>=0.141.1",
+    "psycopg[binary]>=3.3.4",
+    "sqlalchemy>=2.0.52",
 ]
 
 [project.scripts]

@@ -1,0 +1,22 @@
+[project]
+name = "microscope-backend"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Kazi Solayman", email = "kazisolayman123@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi[standard]>=0.141.1",
+]
+
+[project.scripts]
+microscope-backend = "microscope_backend:main"
+
+[build-system]
+requires = ["uv_build>=0.12.5,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.fastapi]
+entrypoint = "microscope_backend.main:app"

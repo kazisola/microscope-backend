@@ -1,5 +1,5 @@
 from fastapi import APIRouter, status
-from microscope_backend.schemas.users import UserCreate, UserPrivate, Token
+from microscope_backend.schemas.user import UserCreate, UserPrivate, Token
 
 
 router = APIRouter(prefix="/api/v1/users", tags=["Users"])

@@ -5,7 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from starlette.exceptions import HTTPException as StarletteHTTPException
 from fastapi.exceptions import RequestValidationError
 from fastapi.exception_handlers import http_exception_handler, request_validation_exception_handler
-from microscope_backend.routers import users
+from microscope_backend.routers import user
 
 @asynccontextmanager
 async def lifespan(_app: FastAPI):
@@ -33,7 +33,7 @@ async def health_check():
     return {"status": "healthy"}
 
 # App routers
-app.include_router(users.router)
+app.include_router(user.router)
 
 # Exception handlers
 @app.exception_handler(StarletteHTTPException)

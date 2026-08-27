@@ -5,6 +5,7 @@ from microscope_backend.database import get_db
 from sqlalchemy.ext.asyncio import AsyncSession
 from microscope_backend.services import auth_service
 from fastapi.security import OAuth2PasswordRequestForm
+from microscope_backend.core.auth import CurrentUser
 
 router = APIRouter(prefix="/api/v1/users", tags=["Users"])
 
@@ -24,3 +25,12 @@ async def login(
     ):
     access_token = await auth_service.login_user(form_data, db)
     return Token(access_token=access_token, token_type="bearer")
+
+
+@router.get("/me", response_model=UserPrivate, status_code=status.HTTP_200_OK)
+async def get_user(
+    current_user: CurrentUser,
+    db: Annotated[AsyncSession, Depends(get_db)]
+    ):
+    user = await auth_service.get_user_service(current_user, db)
+    return user

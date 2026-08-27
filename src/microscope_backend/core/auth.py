@@ -2,6 +2,9 @@ from pwdlib import PasswordHash
 import jwt
 from datetime import datetime, timedelta, UTC
 from microscope_backend.config import settings
+from fastapi.security import OAuth2PasswordBearer
+
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/api/v1/users/login")
 
 password_hash = PasswordHash.recommended()
 

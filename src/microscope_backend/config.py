@@ -1,5 +1,6 @@
 from functools import lru_cache
 from pydantic_settings import BaseSettings, SettingsConfigDict
+from pydantic import SecretStr
 
 class Settings(BaseSettings):
     app_name: str = "MicroScope"
@@ -13,6 +14,10 @@ class Settings(BaseSettings):
     )
 
     database_url: str
+
+    secret_key: SecretStr
+    algorithm: str = "HS256"
+    access_token_expire_mins: int
 
 # Create a Settings instance so Settings() is constructed once per process
 @lru_cache

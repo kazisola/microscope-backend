@@ -1,6 +1,6 @@
 from collections.abc import AsyncGenerator
 from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker, AsyncSession
-from microscope_backend.config import settings
+from microscope_backend.core.config import settings
 from sqlalchemy.orm import DeclarativeBase
 
 

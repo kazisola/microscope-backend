@@ -1,6 +1,6 @@
 from typing import Annotated
 from fastapi import Depends, status, HTTPException
-from microscope_backend.database import get_db
+from microscope_backend.core.database import get_db
 from sqlalchemy import select, func, or_
 from sqlalchemy.ext.asyncio import AsyncSession
 from microscope_backend.models import User
@@ -8,7 +8,7 @@ from microscope_backend.core.auth import hash_password, verify_password, create_
 from microscope_backend.schemas.user import UserCreate
 from fastapi.security import OAuth2PasswordRequestForm
 from datetime import timedelta
-from microscope_backend.config import settings
+from microscope_backend.core.config import settings
 
 
 async def register_user(

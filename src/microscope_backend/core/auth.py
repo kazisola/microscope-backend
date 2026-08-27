@@ -3,11 +3,11 @@ from fastapi import Depends, status, HTTPException
 from pwdlib import PasswordHash
 import jwt
 from datetime import datetime, timedelta, UTC
-from microscope_backend.config import settings
+from microscope_backend.core.config import settings
 from fastapi.security import OAuth2PasswordBearer
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
-from microscope_backend.database import get_db
+from microscope_backend.core.database import get_db
 from microscope_backend.models import User
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/api/v1/users/login")

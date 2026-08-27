@@ -1,4 +1,4 @@
-from microscope_backend.database import Base
+from microscope_backend.core.database import Base
 from sqlalchemy import String, Boolean, Integer
 from sqlalchemy.orm import Mapped, mapped_column
 

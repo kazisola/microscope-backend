@@ -1,7 +1,7 @@
 from typing import Annotated
 from fastapi import APIRouter, status, Depends
 from microscope_backend.schemas.user import UserCreate, UserPrivate, Token
-from microscope_backend.database import get_db
+from microscope_backend.core.database import get_db
 from sqlalchemy.ext.asyncio import AsyncSession
 from microscope_backend.services import auth_service
 from fastapi.security import OAuth2PasswordRequestForm

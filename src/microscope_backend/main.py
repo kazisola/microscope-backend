@@ -1,12 +1,12 @@
 from contextlib import asynccontextmanager
 from fastapi import FastAPI, Request
-from microscope_backend.config import settings
+from microscope_backend.core.config import settings
 from fastapi.middleware.cors import CORSMiddleware
 from starlette.exceptions import HTTPException as StarletteHTTPException
 from fastapi.exceptions import RequestValidationError
 from fastapi.exception_handlers import http_exception_handler, request_validation_exception_handler
 from microscope_backend.routers import user
-from microscope_backend.database import engine
+from microscope_backend.core.database import engine
 
 @asynccontextmanager
 async def lifespan(_app: FastAPI):

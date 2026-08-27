@@ -7,8 +7,8 @@ from sqlalchemy.ext.asyncio import async_engine_from_config
 
 from alembic import context
 from microscope_backend.models import *
-from microscope_backend.database import Base
-from microscope_backend.config import settings
+from microscope_backend.core.database import Base
+from microscope_backend.core.config import settings
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
